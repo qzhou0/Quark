@@ -70,9 +70,16 @@ LESSONS LEARNED
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-yyyy-mm-dd
+2018-05-28
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Victor Lin :: Draft up Proposal
+Kevin  Lin :: <Thing member did.>
+Qian  Zhou :: write some comments to proposal
+==============================================================
+
+2018-mm-dd
+--------------------------------------------------------------
+Victor Lin :: <Thing member did.>
+Kevin  Lin :: <Thing member did.>
+Qian  Zhou :: <Thing member did.>
 ==============================================================
