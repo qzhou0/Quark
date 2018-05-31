@@ -5,7 +5,12 @@ Crucial Jobs:
 
 
 Core Functionality Components:
-
+- ball
+- obstacles
+     - Kickers
+     - Ramps
+     - Bumpers
+- flippers
 
 
 Non-Essential Components:
@@ -13,7 +18,7 @@ Non-Essential Components:
 
 
 Hiearchy of PreRequisition(???):
-
+1) 
 
 
 Tasks to be Delegated:
