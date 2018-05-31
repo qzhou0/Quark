@@ -3,6 +3,14 @@ class Ball {
   float ypos;
   float xvel;
   float yvel;
+  float size;
+  
+  Ball(){
+   xpos = 300;
+   ypos = 400;
+   xvel = yvel = 1;
+   size = 20;
+  }
   
   void move() {
     xpos += xvel;

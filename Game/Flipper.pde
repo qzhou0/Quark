@@ -9,7 +9,7 @@ class Flipper {
   float angle;//original 210 and 330
   boolean orientation; //true = left, false = left; to faciliate angle addition/subtraction
   
-  flipper(int x, int y, float th){
+  Flipper(int x, int y, float th){
     angle = th;
     xpos = x;
     ypos = y;
