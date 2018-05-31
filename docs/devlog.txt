@@ -69,6 +69,13 @@ LESSONS LEARNED
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+2018-05-31
+--------------------------------------------------------------
+Victor Lin :: revised proposal, created flow chart, worked on obstacles
+Kevin  Lin :: created uml diagram, implemented gravity
+Qian  Zhou :: fixed simulation issue
+==============================================================
+
 2018-05-30
 --------------------------------------------------------------
 Victor Lin :: draft up plan, obstacles
@@ -87,18 +94,4 @@ All        :: Work on Proposal
 Victor Lin :: Draft up Proposal
 Kevin  Lin :: collaborate on proposal 
 Qian  Zhou :: write some comments to proposal
-==============================================================
-
-2018-05-29
---------------------------------------------------------------
-Victor Lin :: <Thing member did.>
-Kevin  Lin :: Added empty classes
-Qian  Zhou :: <Thing member did.>
-==============================================================
-
-2018-mm-dd
---------------------------------------------------------------
-Victor Lin :: <Thing member did.>
-Kevin  Lin :: <Thing member did.>
-Qian  Zhou :: <Thing member did.>
 ==============================================================
