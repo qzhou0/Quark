@@ -5,6 +5,7 @@ int points;
 int numBalls = 5;
 
 void setup() {
+  frameRate(60);
   background(0);
   size(600,800);
   b = new Ball();
@@ -13,7 +14,7 @@ void setup() {
 void draw() {
   createField();
   b.move();
-  ellipse(b.xpos,b.ypos,b.size*2,b.size*2);
+  ellipse(b.xpos,b.ypos,b.radius*2,b.radius*2);
   fill(color(0,0,0,255));
 }
 

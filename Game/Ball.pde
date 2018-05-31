@@ -3,18 +3,19 @@ class Ball {
   float ypos;
   float xvel;
   float yvel;
-  float size;
+  float radius;
   
   Ball(){
    xpos = 300;
    ypos = 400;
    xvel = yvel = 1;
-   size = 20;
+   radius = 5;
   }
   
   void move() {
     xpos += xvel;
     ypos += yvel;
+    yvel += 4.905/60;
   }
   
   boolean contact(Object other) {
