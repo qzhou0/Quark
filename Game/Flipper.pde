@@ -13,19 +13,23 @@ class Flipper {
     angle = th;
     xpos = x;
     ypos = y;
+    if (th == 330){orientation = false;}
+    else if (th ==210){orientation = true;}
   }
 
   void move(){
+    
+    fill(color(0,255,0));
+    line(xpos, ypos, xpos+size*cos(angle), ypos+size*sin(angle));
+    //triangle(xpos+5*cos(angle), ypos+5*cos(angle),
+    //         xpos-5*cos(angle), ypos-5*cos(angle),
+      //       xpos+size*cos(angle), ypos+size*sin(angle));
     if (flipperState==3){//maybe allow user to keep pressing signifyer for up? 
       flipperState = 4;//change state if at top to falling
     }
     else if (flipperState==2||flipperState ==4){
-      
-      if ((angle >330||angle < 30)||(angle < 210&&angle>180)){//make new angle
-        line(xpos, ypos, xpos+size*cos(angle), ypos+size*sin(angle));
-      }
       //flipperState update
-      else if (angle ==30||angle == 150) flipperState=3;
+      if (angle ==30||angle == 150) flipperState=3;
       else if(angle == 330 || angle == 210) flipperState = 1;
       //angle increments
       if (flipperState==2) {
