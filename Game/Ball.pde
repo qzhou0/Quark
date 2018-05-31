@@ -13,6 +13,8 @@ class Ball {
   }
   
   void move() {
+    if (ypos + yvel > 800) {yvel = -3 * yvel / 4;}
+    if (xpos + xvel < 0 || xpos + xvel > 600) {xvel = -xvel;}
     xpos += xvel;
     ypos += yvel;
     yvel += 4.905/60;

@@ -15,7 +15,7 @@ void draw() {
   createField();
   b.move();
   ellipse(b.xpos,b.ypos,b.radius*2,b.radius*2);
-  fill(color(0,0,0,255));
+  fill(color(255,0,0));
 }
 
 
@@ -30,10 +30,5 @@ void createField(){
        rect(temp.xpos,temp.ypos,temp.size,temp.size*2);
      }
    }
-   fill(color(255,0,0,0));
-}
-
-void gravity(){
- 
- 
+   fill(color(0,255,0));
 }
