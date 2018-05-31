@@ -92,6 +92,6 @@ Qian  Zhou :: write some comments to proposal
 2018-mm-dd
 --------------------------------------------------------------
 Victor Lin :: <Thing member did.>
-Kevin  Lin :: <Thing member did.>
+Kevin  Lin :: Made empty classes for the game
 Qian  Zhou :: <Thing member did.>
 ==============================================================
