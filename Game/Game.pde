@@ -26,11 +26,8 @@ void createField(){
      if(temp instanceof Bumper){
        ellipse(temp.xpos,temp.ypos,temp.size*2,temp.size*2);
      }
-     else if(temp instanceof Kicker){
+     else if(temp instanceof Wall){
        rect(temp.xpos,temp.ypos,temp.size,temp.size*2);
-     }
-     else{
-       
      }
    }
    fill(color(255,0,0,0));
