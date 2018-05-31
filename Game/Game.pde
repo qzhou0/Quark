@@ -3,17 +3,23 @@ ArrayList<Obstacle> ob  = new ArrayList<Obstacle>();
 Ball b;
 int points;
 int numBalls = 5;
+Flipper left,right;
 
 void setup() {
   frameRate(60);
-  background(0);
+  background(255,0,0);
   size(600,800);
   b = new Ball();
+  left = new Flipper(260,750,330);
+  right = new Flipper(340,750,210);
 }
 
 void draw() {
   createField();
+  
+  left.move();right.move();
   b.move();
+  fill(color(0,0,255));
   ellipse(b.xpos,b.ypos,b.radius*2,b.radius*2);
   fill(color(255,0,0));
 }
