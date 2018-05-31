@@ -19,9 +19,6 @@ void draw() {
   
   left.move();right.move();
   b.move();
-  fill(color(0,0,255));
-  ellipse(b.xpos,b.ypos,b.radius*2,b.radius*2);
-  fill(color(255,0,0));
 }
 
 
