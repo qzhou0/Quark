@@ -6,19 +6,30 @@ Crucial Jobs:
 
 Core Functionality Components:
 - ball
+   - creation
+   - movability
 - obstacles
      - Kickers
      - Ramps
      - Bumpers
 - flippers
+   - creation
+   - movability
 
 
 Non-Essential Components:
 - point system
+- special effects
+
 
 
 Hiearchy of PreRequisition(???):
-1) 
+1) put everything necessary into the picture for basic level of game
+     a)ball, obstacles, flippers
+     b)Game(creation, etc), to be revised accordingly with each class
+2) put everything into the right place
+3) user interface & contact of ball with obstacle/flipper/wall?
+4) improve functionality???
 
 
 Tasks to be Delegated:
