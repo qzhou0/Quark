@@ -9,7 +9,7 @@ Core Functionality Components:
 
 
 Non-Essential Components:
-
+- point system
 
 
 Hiearchy of PreRequisition(???):
@@ -17,10 +17,14 @@ Hiearchy of PreRequisition(???):
 
 
 Tasks to be Delegated:
-
+- Game = everyone
+- Ball = Kevin Lin
+- Flipper = Qian Zhou
+- Obstacle = Victor Lin
 
 Tasks to be Tackled Collaboratively:
-
+- functionality of Game.pde
 
 
 Timeline ? :
+- 5/30/18 = create basic structure of classes/components
