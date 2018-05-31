@@ -5,6 +5,6 @@ abstract class Obstacle {
   
   boolean inContact(Ball other){
      return (Math.pow(Math.pow(other.xpos-xpos,2) + Math.pow(other.ypos-ypos,2),.5) <
-            (other.radius + size) / 2);
+            (other.radius + size));
   }
 }
