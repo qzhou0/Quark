@@ -89,9 +89,16 @@ Kevin  Lin :: collaborate on proposal
 Qian  Zhou :: write some comments to proposal
 ==============================================================
 
+2018-05-29
+--------------------------------------------------------------
+Victor Lin :: <Thing member did.>
+Kevin  Lin :: Added empty classes
+Qian  Zhou :: <Thing member did.>
+==============================================================
+
 2018-mm-dd
 --------------------------------------------------------------
 Victor Lin :: <Thing member did.>
-Kevin  Lin :: Made empty classes for the game
+Kevin  Lin :: <Thing member did.>
 Qian  Zhou :: <Thing member did.>
 ==============================================================
