@@ -11,8 +11,9 @@ void setup() {
   background(255,0,0);
   size(600,800);
   b = new Ball();
-  left = new Flipper(280,750,280);
-  right = new Flipper(320,750,50);
+  left = new Flipper(220,750,11*PI/6);
+  left.setState(2);
+  right = new Flipper(380,750,7*PI/6);
   designField();
 }
 
@@ -25,6 +26,8 @@ void draw() {
        temp.bounce(b);
    for(Wall temp:wall)
        temp.reflect(b);
+   left.bounce(b);
+   right.bounce(b);
 }
 
 
