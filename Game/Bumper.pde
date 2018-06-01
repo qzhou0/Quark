@@ -8,7 +8,7 @@ class Bumper extends Obstacle{
    void bounce(Ball other){
      if(inContact(other)){
         float ang = PI - atan(other.yvel/other.xvel);
-        float vel = tan(ang);
+        float vel = tan(ang) + 0.25;//a bug exists
         other.xvel = vel * cos(ang);
         other.yvel = vel * sin(ang);
         points++;
