@@ -39,6 +39,14 @@ void createField(){
        line(temp.xpos,temp.ypos,temp.xpoint2,temp.ypoint2);
    fill(color(0,255,0));
    strokeWeight(3);
+   
+   
+    for (int i = 0; i < width; i+=25) {
+      line (i, 0, i, height);
+    }
+    for (int i = 0; i < height; i+=25) {
+      line (0, i, width, i);
+    }
 }
 
 void designField(){

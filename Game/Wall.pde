@@ -15,7 +15,6 @@ class Wall extends Obstacle{
         float vel = tan(ang) + 0.1;
         other.xvel = vel * cos(ang);
         other.yvel = vel * sin(ang);
-        points++;
      }
    }
    
