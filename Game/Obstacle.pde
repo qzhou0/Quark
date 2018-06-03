@@ -3,8 +3,5 @@ abstract class Obstacle {
   float ypos;
   float size;
   
-  boolean inContact(Ball other){
-     return (Math.pow(Math.pow(other.xpos-xpos,2) + Math.pow(other.ypos-ypos,2),.5) <
-            (other.radius + size));
-  }
+  abstract boolean inContact(Ball other);//Returns true if Obstacle is in contact with ball
 }
