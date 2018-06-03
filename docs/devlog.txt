@@ -69,7 +69,14 @@ LESSONS LEARNED
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-2018-05-02
+2018-06-03
+--------------------------------------------------------------
+Victor Lin :: 
+Kevin  Lin :: Made inContact(Ball) abstract in class Obstace, fixed bouncing off Bumper, added a ball speed limit
+Qian  Zhou :: continue to work on Flipper
+==============================================================
+
+2018-06-02
 --------------------------------------------------------------
 Victor Lin :: 
 Kevin  Lin :: 
@@ -79,7 +86,7 @@ Qian  Zhou :: continue to work on Flipper
 2018-06-01
 --------------------------------------------------------------
 Victor Lin :: improve Ball
-Kevin  Lin :: 
+Kevin  Lin :: Worked on bouncing
 Qian  Zhou :: puzzle over flipper
 ==============================================================
 
