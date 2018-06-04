@@ -1,3 +1,5 @@
+Quark: Qian Zhou, Kevin Lin, Victor Lin
+Pd 1
 2018-05-31 Plan
 
 Crucial Jobs:
@@ -14,6 +16,7 @@ Core Functionality Components:
 - flippers
    - inContact and bumping:
      - whether it is possible to make the ball not fall through the flippers
+   - make fipper movement consistent such that key presses will have the same effect on the flippers rather than seemingly random angles
 
 
 Non-Essential Components:
