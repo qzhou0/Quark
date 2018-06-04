@@ -18,12 +18,6 @@ class Flipper {
   }
 
   void move(){
-    strokeWeight(5);
-    //fill(color(0,255,0));
-    stroke(0, 255,0);
-   
-    line(xpos, ypos, xpos+size*cos(angle), ypos-size*sin(angle));
- 
     stroke(0);
     strokeWeight(1);
     //triangle(xpos+5*cos(angle), ypos+5*cos(angle),

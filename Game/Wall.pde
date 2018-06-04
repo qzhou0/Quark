@@ -9,21 +9,23 @@ class Wall extends Obstacle{
       ypoint2 = yloc2;
     }
     
-    void reflect(Ball other){
-     if(this.inContact(other)){
-        float ang = PI - atan(other.yvel/other.xvel);
-        float vel = tan(ang) + 0.1;
+   void reflect(Ball other){
+       if(other.xpos>=600 ||other.xpos<=0||this.inContact(other)){
+        float ang = PI - atan((other.ypos - ypos)/(other.xpos - xpos));
+        if (other.xpos > xpos) ang = PI - ang;
+        if (other.ypos > ypos) ang = -ang;
+        float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 ) + 3;
         other.xvel = vel * cos(ang);
         other.yvel = vel * sin(ang);
-     }
+       }
    }
    
-  boolean inContact(Ball other){
-    float a = ypoint2 - ypos;
-    float b = xpoint2 - xpos;
-    float c = xpoint2*ypos + ypoint2*xpos;
-    return (((a*other.xpos)+(b*other.ypos)+c)
-           /(Math.pow(Math.pow(a,2)+Math.pow(b,2),0.5)))< other.radius;
+  boolean inContact(Ball o){
+    float m = (ypoint2 - ypos)/(xpoint2-xpos);
+    float b = ypos - m*xpos;
+    return abs(m*o.xpos + b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<3*o.radius||
+           abs(m*(o.xpos + o.xvel) + b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<2*o.radius;       
+   
   }
   
 }
