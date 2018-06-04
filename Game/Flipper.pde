@@ -18,6 +18,11 @@ class Flipper {
   }
 
   void move(){
+
+    strokeWeight(5);
+   stroke(0, 0,0);
+   line(xpos, ypos, xpos+size*cos(angle),ypos-size*sin(angle));
+   
     stroke(0);
     strokeWeight(1);
     //triangle(xpos+5*cos(angle), ypos+5*cos(angle),
@@ -77,7 +82,7 @@ class Flipper {
       else{angle -=PI/18;}
       }*/
     }
-    else if(flipperState == 1){flipperState = 2;F=30;}
+    //else if(flipperState == 1){flipperState = 2;F=30;}
   }
   //contact mechanism
   boolean inContact(Ball o){
@@ -98,8 +103,8 @@ class Flipper {
     m=atan(angle);
     b=ypos-m*xpos;
     
-    return abs(m*o.xpos+b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<3*o.radius||
-           abs(m*(o.xpos+o.xvel)+b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<2*o.radius;
+    return abs(m*o.xpos+b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<o.radius||
+           abs(m*(o.xpos+o.xvel)+b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;
     /*float dist = (float)Math.pow(Math.pow(o.xpos-xpos,2)+
                                  Math.pow(o.ypos-ypos,2)  ,.5);
     float x1x0=atan((ypos-o.ypos)/(xpos-o.xpos));

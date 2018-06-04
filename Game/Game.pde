@@ -15,7 +15,7 @@ void setup() {
   size(600,800);
   b = new Ball();
   left = new Flipper(220,750,11*PI/6);
-  left.setState(2);
+  //left.setState(2);
   right = new Flipper(380,750,7*PI/6);
   designField();
 }
@@ -23,25 +23,37 @@ void setup() {
 void draw() {
     createField();
     if(start)b.move();
+
    for(Bumper temp:bump)
        temp.bounce(b);
    for(Wall temp:wall)
        temp.reflect(b);
-   strokeWeight(5);
+   /*strokeWeight(5);
    stroke(0, 0,0);
    line(left.xpos, left.ypos, left.xpos+left.size*cos(left.angle), left.ypos-left.size*sin(left.angle));
    line(right.xpos, right.ypos, right.xpos+right.size*cos(right.angle), right.ypos-right.size*sin(right.angle));
+   */
+   left.move();
+   right.move();
    left.bounce(b);
    right.bounce(b);
 }
 
 void keyPressed(){
-   if(key == 's')
+   if(key == 's'){
      leftpress = true;
-   if(key == 'k')
+     
+   }
+   if(key == 'k'){
      rightpress = true;
-   
-   if(rightpress && leftpress){
+     
+   }
+   if(leftpress)
+     left.flipperState = 2;
+   if(rightpress)
+     right.flipperState=2;
+
+   /*if(rightpress && leftpress){
      for(int i=0;i<8;i++){
       left.move();
       right.move();
@@ -54,7 +66,7 @@ void keyPressed(){
    else{
      for(int i=0;i<8;i++)
       left.move(); 
-   }
+   }*/
    if(key == ' '){
        start  = true;
        b = new Ball();
@@ -66,6 +78,10 @@ void keyReleased(){
      leftpress = false;
    if(key == 'k')
      rightpress = false;
+   if(leftpress)
+     left.flipperState = 2;
+   if(rightpress)
+     right.flipperState=2;
 }
 
 
@@ -89,6 +105,7 @@ void createField(){
 
 void designField(){
    bump.add(new Bumper(300,600,20)); 
+
    wall.add(new Wall(0,675,220,750));
    wall.add(new Wall(380,750,600,675));
    wall.add(new Wall(0,675,0,0));
