@@ -71,7 +71,7 @@ LESSONS LEARNED
 
 2018-06-03
 --------------------------------------------------------------
-Victor Lin :: 
+Victor Lin :: wall works, key presses for flippers and basic structure of field
 Kevin  Lin :: Made inContact(Ball) abstract in class Obstace, fixed bouncing off Bumper, added a ball speed limit
 Qian  Zhou :: 
 ==============================================================
