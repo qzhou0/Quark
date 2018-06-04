@@ -87,6 +87,7 @@ void keyReleased(){
 
 void createField(){
    background(255,255,255);
+   strokeWeight(5);
    for(Bumper temp:bump)
        ellipse(temp.xpos,temp.ypos,temp.size*2,temp.size*2);
    for(Wall temp:wall)

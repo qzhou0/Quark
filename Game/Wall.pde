@@ -12,8 +12,6 @@ class Wall extends Obstacle{
    void reflect(Ball other){
        if(other.xpos>=600 ||other.xpos<=0||this.inContact(other)){
         float ang = PI - atan((other.ypos - ypos)/(other.xpos - xpos));
-        if (other.xpos > xpos) ang = PI - ang;
-        if (other.ypos > ypos) ang = -ang;
         float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 ) + 3;
         other.xvel = vel * cos(ang);
         other.yvel = vel * sin(ang);
