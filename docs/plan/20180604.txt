@@ -12,17 +12,23 @@ Core Functionality Components:
      - Ramps
      - Bumpers
      - Wall
+        - reflection seem a little queer, need checking
      - inContact() for most of them, and the bumping mechanism 
 - flippers
    - inContact and bumping:
      - whether it is possible to make the ball not fall through the flippers
+     - ball may sometimes not be able to fall through the flippers
    - make fipper movement consistent such that key presses will have the same effect on the flippers rather than seemingly random angles
-
+     - each key press need to wait a period until the flipper stays constantly at the top
+   
+- user interface
+   
 
 Non-Essential Components:
 - point system
 - special effects
 - design field of the game
+- regulation of user interface
 
 
 
@@ -34,16 +40,16 @@ Hiearchy of PreRequisition(???):
         ii) wall
         iii) other obstacles
      c)Game(creation, etc), to be revised accordingly with each class
-2) put everything into the right place
-3) user interface & contact of ball with obstacle/flipper/wall?
-4) improve functionality???
+2) contact of ball with obstacle/flipper/wall, and bumping of ball with such contact
+3) improve functionality
+4) design of game and decorations
 
 
 Tasks to be Delegated:
 
 
 Tasks to be Tackled Collaboratively:
-
+- need to work out a consistent inContact and reflection formula
 
 
 Timeline ? :
