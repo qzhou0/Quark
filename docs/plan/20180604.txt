@@ -3,7 +3,7 @@ Pd 1
 2018-05-31 Plan
 
 Crucial Jobs:
-
+- logic checking
 
 
 Core Functionality Components:
