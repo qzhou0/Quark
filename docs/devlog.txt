@@ -73,7 +73,7 @@ LESSONS LEARNED
 --------------------------------------------------------------
 Victor Lin :: 
 Kevin  Lin :: Made inContact(Ball) abstract in class Obstace, fixed bouncing off Bumper, added a ball speed limit
-Qian  Zhou :: continue to work on Flipper
+Qian  Zhou :: 
 ==============================================================
 
 2018-06-02

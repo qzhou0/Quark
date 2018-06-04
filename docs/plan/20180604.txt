@@ -1,0 +1,46 @@
+2018-05-31 Plan
+
+Crucial Jobs:
+
+
+
+Core Functionality Components:
+- obstacles
+     - Kickers
+     - Ramps
+     - Bumpers
+     - Wall
+     - inContact() for most of them, and the bumping mechanism 
+- flippers
+   - inContact and bumping:
+     - whether it is possible to make the ball not fall through the flippers
+
+
+Non-Essential Components:
+- point system
+- special effects
+- design field of the game
+
+
+
+Hiearchy of PreRequisition(???):
+1) put everything necessary into the picture for basic level of game
+     a)ball, obstacles, flippers
+     b) verify and test inContact(Ball) mechanism and bumping mechanism for each
+        i) flippers
+        ii) wall
+        iii) other obstacles
+     c)Game(creation, etc), to be revised accordingly with each class
+2) put everything into the right place
+3) user interface & contact of ball with obstacle/flipper/wall?
+4) improve functionality???
+
+
+Tasks to be Delegated:
+
+
+Tasks to be Tackled Collaboratively:
+
+
+
+Timeline ? :
