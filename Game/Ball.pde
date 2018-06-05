@@ -6,10 +6,10 @@ class Ball {
   float radius;
   
   Ball(){
-   xpos = 520;
+   xpos = 475;
    ypos = 50;
-   xvel = 0;
-   yvel = -1;
+   xvel = -14;
+   yvel = 0;
    radius = 7.5;
   }
   
