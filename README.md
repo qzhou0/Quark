@@ -1,7 +1,6 @@
 # PinBall
 
-## Quark
-## Kevin Lin, Qian Zhou, Victor Lin
+## Quark: Kevin Lin, Qian Zhou, Victor Lin
 ## Period 1
 
 ## Description
