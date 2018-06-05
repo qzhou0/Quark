@@ -117,9 +117,11 @@ class Flipper {
         //reflect algo from wall
         System.out.println("Collide "+col+" " + o.xpos+","+o.ypos);
         col++;
-        float ang = (angle - atan(o.yvel/o.xvel));//angle of incidence
-        //float vel = tan(ang);
         
+        //float ang = (angle - atan(o.yvel/o.xvel));//angle of incidence
+        //float vel = tan(ang);
+        float ang = angle+PI/2-(atan(o.yvel/o.xvel)-(angle+PI/2));
+
         float g =4.905/60;//acceleration due to gravity
         float betha = PI + angle;
         float norm=g*cos(betha);
@@ -133,20 +135,29 @@ class Flipper {
                                         Math.pow((o.ypos-xpos),2)  ,.5)/10;
        
         if (orientation)
-          normal = (angle+PI/2)%(2*PI);
+          normal = (angle+PI/2)%(2*PI);//(angle+PI/2)%(2*PI);
         else normal = (angle-PI/2)%(2*PI);
+ 
         /*o.xvel = cos(ang)*vel+F*cos(normal)*distance;
         o.yvel = sin(ang)*vel+F*sin(normal)*distance;
         */
         /*o.xvel = -o.xvel+cos(-angle)*norm+F*cos(normal)*distance;
         o.yvel = (-3 * o.yvel / 4)+sin(-angle)*norm+F*sin(normal)*distance;
         */
-        line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2*cos(ang),(ypos2+ypos)/2*sin(ang));
+        strokeWeight(10);
+        line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2+100*cos(normal),(ypos2+ypos)/2-100*sin(normal));
+        stroke(0,255,0);
+        line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2+100*cos(normal),(ypos2+ypos)/2);
+        stroke(255,0,0);
+        line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2,(ypos2+ypos)/2-100*sin(normal));
         System.out.print((normal*180)%(360));
         
         float vel = (float)Math.pow(Math.pow(o.xvel,2)+Math.pow(o.yvel,2),.5);
-        o.xvel = vel*cos(ang)+F*cos(normal)*distance;
-        o.yvel = vel*sin(ang)+F*sin(normal)*distance;
+        float x = o.xvel-tan(angle)/abs(tan(angle))*F*sin(normal)*distance;
+        o.xvel =tan(angle)/abs(tan(angle))*o.yvel+tan(angle)/abs(tan(angle))*F*cos(normal)*distance;
+        o.yvel = -abs(x);
+        //o.xvel = vel*cos(ang)+F*cos(ang)*distance;
+        //o.yvel = vel*sin(ang)+F*sin(ang)*distance;
        // o.xvel = -o.xvel+F*cos(normal)*distance;
         //o.yvel=(-3*o.yvel/4)-norm*F*sin(normal)*distance;
         points++;
