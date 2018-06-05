@@ -14,4 +14,4 @@ PinBall is a game; subsequently, the user can spend his leisure time having fun.
 2) change directory to ./Game
 3) open processing for Game.pde
 4) press the play button once the window opens
-5) play and HAVE FUN?!?!
+5) play and HAVE FUN?!?! (Press S for left Flipper and K for right Flipper and SPACE to launch the ball)
