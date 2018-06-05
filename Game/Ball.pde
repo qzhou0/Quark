@@ -8,7 +8,7 @@ class Ball {
   Ball(){
    xpos = 520;
    ypos = 50;
-   xvel = 0;
+   xvel = -.2;
    yvel = -1;
    radius = 7.5;
   }

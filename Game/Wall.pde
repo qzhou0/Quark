@@ -21,8 +21,10 @@ class Wall extends Obstacle{
          if (other.xvel == 0) {
            ang = PI / 2;
          }
-         else if (m1 > 0 && m2 > 0) ang = -atan(m1) + atan(m2);
-         else ang = atan(m1) + atan(m2);
+         else if (m1 > 0 && m2 < 0) ang = -atan(m1) + atan(m2);
+         else if (m1 < 0 && m2 < 0) ang = -PI + atan(m2) - atan(m1);
+         else if (m1 < 0 && m2 > 0) ang = -PI -atan(m1) + atan(m2);
+         else ang = atan(m2) - atan(m1);
          //else ang = atan(m1) + atan(m2);
          float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 );
          System.out.println((ang/PI * 180) + " " + vel);
