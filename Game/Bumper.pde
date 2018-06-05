@@ -6,7 +6,7 @@ class Bumper extends Obstacle{
    }
    
    boolean inContact(Ball other){
-     return (Math.pow(Math.pow(other.xpos-xpos,2) + Math.pow(other.ypos-ypos,2),.5) <
+     return (Math.pow(Math.pow(other.xpos + other.xvel -xpos,2) + Math.pow(other.ypos + other.yvel -ypos,2),.5) <
             (other.radius + size));
   }
    

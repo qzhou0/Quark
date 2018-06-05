@@ -14,15 +14,15 @@ class Ball {
   }
   
   void move() {
-    if (xvel > 15) xvel = 15; //Speed limits
-    else if (xvel < -15) xvel = 15;
-    if (yvel > 15) yvel = 15;
-    else if (yvel < -15) yvel = -15;
+    if (xvel > 14) xvel = 14; //Speed limits
+    else if (xvel < -14) xvel = 14;
+    if (yvel > 14) yvel = 14;
+    else if (yvel < -14) yvel = -14;
     
     ellipse(xpos,ypos,radius*2,radius*2);
     fill(color(255,0,0));
-    if (ypos + yvel + radius > 800 || ypos + yvel - radius < 0) {yvel = -3 * yvel / 4;}
-    if (xpos + xvel - radius < 0 || xpos + xvel + radius > 600) {xvel = -xvel;}
+    if (ypos + yvel - radius < 0) {yvel = -3 * yvel / 8;}
+    if (xpos + xvel - radius < 0 || xpos + xvel + radius > 600) {xvel = -3 * xvel / 8;}
     xpos += xvel;
     ypos += yvel;
     yvel += 4.905/60;

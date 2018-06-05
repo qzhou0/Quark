@@ -10,19 +10,28 @@ class Wall extends Obstacle{
     }
     
    void reflect(Ball other){
-       if(other.xpos>=600 ||other.xpos<=0||this.inContact(other)){
-        float ang = PI - atan((other.ypos - ypos)/(other.xpos - xpos));
-        float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 ) + 3;
-        other.xvel = vel * cos(ang);
-        other.yvel = vel * sin(ang);
+       if(this.inContact(other)){
+         float ang;
+         if (other.xvel == 0) {
+           ang = PI / 4;
+         }
+         else ang = PI - atan(other.yvel/other.xvel) + atan((ypos-ypoint2)/(xpos-xpoint2));
+         float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 );
+         other.xvel = vel * cos(ang);
+         other.yvel = vel * sin(ang);
        }
    }
    
   boolean inContact(Ball o){
+    if (xpos == xpoint2) return (abs(o.xpos - xpos) < o.radius);
     float m = (ypoint2 - ypos)/(xpoint2-xpos);
-    float b = ypos - m*xpos;
-    return abs(m*o.xpos + b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<3*o.radius||
-           abs(m*(o.xpos + o.xvel) + b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<2*o.radius;       
+    float a = -m;
+    float b = 1;
+    float c = - (ypos - m*xpos);
+    //float b = ypos - m*xpos;
+    return abs(a * (o.xpos + o.xvel) + b * (o.ypos + o.yvel) + c) / pow(pow(a,2) + pow(b,2),.5) < o.radius;
+    //return abs(m*o.xpos + b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<o.radius||
+    //       abs(m*(o.xpos + o.xvel) + b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;       
    
   }
   
