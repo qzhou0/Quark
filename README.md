@@ -4,10 +4,10 @@
 ## Period 1
 
 ## Description
-the classic pinball game in which the user controls the flippers located onthe bottom of the gui. Use those flippers to keep the moving ball within the field. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
+the classic pinball game in which the user controls the flippers located on the bottom of the gui. Use those flippers to keep the moving ball within the field. There's a downward acceleration acting on the ball. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
 
 ## Advantages of Use
-PinBall is a game; subsequently, the user can spend his leisure time having fun.
+PinBall is a game; subsequently, the user can spend his leisure time having fun using his eyes and hands.
 
 ## Instructions
 1) pull repository
