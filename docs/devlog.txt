@@ -43,7 +43,8 @@ maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+- In Processing, positive angles are clockwise
+- Point to line segment distance
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,6 +69,13 @@ LESSONS LEARNED
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+2018-06-04
+--------------------------------------------------------------
+Victor Lin ::
+Kevin  Lin :: Improved wall collision testing and collisions, reduced speed limit
+Qian  Zhou ::
+==============================================================
 
 2018-06-04
 --------------------------------------------------------------
