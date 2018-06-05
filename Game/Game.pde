@@ -33,6 +33,10 @@ void draw() {
    line(left.xpos, left.ypos, left.xpos+left.size*cos(left.angle), left.ypos-left.size*sin(left.angle));
    line(right.xpos, right.ypos, right.xpos+right.size*cos(right.angle), right.ypos-right.size*sin(right.angle));
    */
+      if(leftpress)
+     left.flipperState = 2;
+   if(rightpress)
+     right.flipperState=2;
    left.move();
    right.move();
    left.bounce(b);

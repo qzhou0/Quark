@@ -4,8 +4,9 @@ class Flipper {
   //1 = normal; 2=up, 3=top, 4=falling down, 
   //3 might be needed to prevent it from falling down if the user does not let go of key?
   int size = 70;//?
-  
+  int col=0;
   int xpos,ypos;
+  float xpos2,ypos2;
   float angle;//original 210, 7*PI/6 and 330 11PI/6
   boolean orientation; //true = left, false = left; to faciliate angle addition/subtraction
   float F;//force??? maybe?
@@ -13,6 +14,8 @@ class Flipper {
     angle = th;
     xpos = x;
     ypos = y;
+    xpos2 = xpos+size*cos(angle);
+    ypos2 = ypos-size*sin(angle);
     if (th == 11*PI/6){orientation = true;}
     else if (th == 7*PI/6){orientation = false;}
   }
@@ -21,8 +24,10 @@ class Flipper {
 
     strokeWeight(5);
    stroke(0, 0,0);
-   line(xpos, ypos, xpos+size*cos(angle),ypos-size*sin(angle));
-   
+   xpos2=xpos+size*cos(angle);
+   ypos2=ypos-size*sin(angle);
+   /*line(xpos, ypos, xpos+size*cos(angle),ypos-size*sin(angle));*/
+   line(xpos, ypos, xpos2,ypos2);
     stroke(0);
     strokeWeight(1);
     //triangle(xpos+5*cos(angle), ypos+5*cos(angle),
@@ -86,71 +91,64 @@ class Flipper {
   }
   //contact mechanism
   boolean inContact(Ball o){
-    /*float dist = (float)Math.pow(Math.pow(o.xpos-xpos,2)+
-                                 Math.pow(o.ypos-ypos,2)  ,.5);
-    float x1x0=atan((ypos-o.ypos)/(xpos-o.xpos));
-    if((dist<size&&
-        x1x0<=angle%(2*PI)+(PI/9)&&
-        x1x0>=angle%(2*PI)-(PI/9))||
-       dist<size*.2)
-       //atan((xpos-o.xpos)/(ypos-o.ypos))-(PI/36))<=angle)
-       return true;*/
-   
-    if (o.ypos<720||o.ypos>785) return false;
-    if (orientation&&o.xpos<xpos||
-        !orientation&&o.xpos>xpos) return false;
-    float m,b;
-    m=atan(angle);
-    b=ypos-m*xpos;
-    
-    return abs(m*o.xpos+b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<o.radius||
-           abs(m*(o.xpos+o.xvel)+b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;
-    /*float dist = (float)Math.pow(Math.pow(o.xpos-xpos,2)+
-                                 Math.pow(o.ypos-ypos,2)  ,.5);
-    float x1x0=atan((ypos-o.ypos)/(xpos-o.xpos));
-
-    if(dist<size){
-        if(orientation && (angle+(PI/9))%2*PI>0){
-          return x1x0<=(angle+(PI/9))%2*PI||x1x0>=(angle-(PI/9))%2*PI;
-        }
-        else if(dist<size*.2){return true;}
-        else{
-          return (x1x0<=(angle+(PI/9))%2*PI&&x1x0>=(angle-(PI/9))%2*PI);
-        }
-       //dist<size*.2)
+    if(orientation){
+      if(o.xpos>xpos2||o.xpos<xpos)return false;
     }
-       //atan((xpos-o.xpos)/(ypos-o.ypos))-(PI/36))<=angle)
-       //return true;
-    return false;*/
+    else{if (o.xpos<xpos2||o.xpos>xpos)return false;}
+    
+    /*if (o.ypos<720||o.ypos>785) return false;
+    if (orientation&&o.xpos<xpos||
+        !orientation&&o.xpos>xpos) return false;*/
+    
+    float m,b;
+    m=(ypos-ypos2)/(xpos-xpos2);
+    b=ypos-m*xpos;
+    strokeWeight(3);
+
+    line(xpos,ypos, xpos2,xpos2*m+b);
+    strokeWeight(1);
+    return abs(m*o.xpos+b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;
+           //||abs(m*(o.xpos+o.xvel)+b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;
+
   }
   void bounce(Ball o){
   
     if(inContact(o)){
         //reflect algo from wall
+        System.out.println("Collide "+col+" " + o.xpos+","+o.ypos);
+        col++;
         float ang = (angle - atan(o.yvel/o.xvel));//angle of incidence
-        float vel = tan(ang) ;
+        //float vel = tan(ang);
         
         float g =4.905/60;//acceleration due to gravity
         float betha = PI + angle;
         float norm=g*cos(betha);
-        
+        strokeWeight(3);
+
+    
+    strokeWeight(1);
         float normal;
         int distance = (int)Math.pow( 
                                         Math.pow((o.ypos-ypos),2)+
                                         Math.pow((o.ypos-xpos),2)  ,.5)/10;
        
         if (orientation)
-          normal = angle+90;
-        else normal = angle-90;
+          normal = (angle+PI/2)%(2*PI);
+        else normal = (angle-PI/2)%(2*PI);
         /*o.xvel = cos(ang)*vel+F*cos(normal)*distance;
         o.yvel = sin(ang)*vel+F*sin(normal)*distance;
         */
         /*o.xvel = -o.xvel+cos(-angle)*norm+F*cos(normal)*distance;
         o.yvel = (-3 * o.yvel / 4)+sin(-angle)*norm+F*sin(normal)*distance;
         */
+        line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2*cos(ang),(ypos2+ypos)/2*sin(ang));
+        System.out.print((normal*180)%(360));
         
-        o.xvel = -o.xvel+norm*F*cos(normal)*distance;
-        o.yvel=(-3*o.yvel/4)-norm*F*sin(normal)*distance;
+        float vel = (float)Math.pow(Math.pow(o.xvel,2)+Math.pow(o.yvel,2),.5);
+        o.xvel = vel*cos(ang)+F*cos(normal)*distance;
+        o.yvel = vel*sin(ang)+F*sin(normal)*distance;
+       // o.xvel = -o.xvel+F*cos(normal)*distance;
+        //o.yvel=(-3*o.yvel/4)-norm*F*sin(normal)*distance;
         points++;
         
     }
