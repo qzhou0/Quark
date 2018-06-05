@@ -1,9 +1,8 @@
-# Quark
+# PinBall
 
+## Quark
 ## Kevin Lin, Qian Zhou, Victor Lin
 ## Period 1
-
-## PinBall
 
 ## Description
 the classic pinball game in which the user controls the flippers located onthe bottom of the gui. Use those flippers to keep the moving ball within the field. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
