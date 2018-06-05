@@ -72,7 +72,7 @@ LESSONS LEARNED
 
 2018-06-05
 --------------------------------------------------------------
-Victor Lin ::
+Victor Lin :: completed field design
 Kevin  Lin :: Improved wall collision testing and collisions, reduced speed limit
 Qian  Zhou :: worked on flipper collision, and control
 ==============================================================
