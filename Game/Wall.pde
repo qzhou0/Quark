@@ -33,9 +33,22 @@ class Wall extends Obstacle{
        }
    }
    
-  boolean inContact(Ball o){
+  boolean inContact(Ball o) {
+    float smallX;
+    float smallY;
+    float bigX;
+    float bigY;
+    float m = -(xpoint2-xpos)/(ypoint2 - ypos);
+    if (ypoint2 < ypos) { smallY = ypoint2; smallX = xpoint2; bigX = xpos; bigY = ypos; }
+    else { smallY = ypos; smallX = xpos; bigX = xpoint2; bigY = ypoint2;}
+    if (o.ypos + o.yvel < m*(o.xpos + o.xvel - smallX) + smallY) {
+      return pow(o.ypos + o.yvel - smallY,2) + pow(o.xpos + o.xvel - smallX,2) < pow(o.radius,2);
+    }
+    else if (o.ypos + o.yvel > m*(o.xpos + o.xvel - bigX) + bigY) {
+      return pow(o.ypos + o.yvel - bigY,2) + pow(o.xpos + o.xvel - bigX,2) < pow(o.radius,2);
+    }
     if (xpos == xpoint2) return (abs(o.xpos - xpos) < o.radius);
-    float m = (ypoint2 - ypos)/(xpoint2-xpos);
+    m = -1/m;
     float a = -m;
     float b = 1;
     float c = - (ypos - m*xpos);

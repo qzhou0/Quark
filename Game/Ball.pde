@@ -6,7 +6,7 @@ class Ball {
   float radius;
   
   Ball(){
-   xpos = 300;
+   xpos = 500;
    ypos = 400;
    xvel = 0;
    yvel = 0;
