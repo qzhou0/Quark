@@ -1,8 +1,10 @@
 class Wall extends Obstacle{
+  float coll;
     float xpoint2;
     float ypoint2;
   
     Wall(float xloc1, float yloc1, float xloc2, float yloc2){
+      coll = 0;
       xpos = xloc1;
       ypos = yloc1;
       xpoint2 = xloc2;
@@ -11,12 +13,19 @@ class Wall extends Obstacle{
     
    void reflect(Ball other){
        if(this.inContact(other)){
+         float m1 = other.yvel/other.xvel;
+         float m2 = (ypos-ypoint2)/(xpos-xpoint2);
+         System.out.println("Collide" + coll);
+         coll++;
          float ang;
          if (other.xvel == 0) {
-           ang = PI / 4;
+           ang = PI / 2;
          }
-         else ang = PI - atan(other.yvel/other.xvel) + atan((ypos-ypoint2)/(xpos-xpoint2));
+         else if (m1 > 0 && m2 > 0) ang = -atan(m1) + atan(m2);
+         else ang = atan(m1) + atan(m2);
+         //else ang = atan(m1) + atan(m2);
          float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 );
+         System.out.println((ang/PI * 180) + " " + vel);
          other.xvel = vel * cos(ang);
          other.yvel = vel * sin(ang);
        }
