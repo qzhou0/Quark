@@ -18,8 +18,9 @@ class Wall extends Obstacle{
          System.out.println("Collide" + coll);
          coll++;
          float ang;
-         if (other.xvel == 0) {
-           ang = PI / 2;
+         if (xpos == xpoint2) {
+           other.xvel = -other.xvel;
+           return;
          }
          else if (m1 > 0 && m2 < 0) ang = -atan(m1) + atan(m2);
          else if (m1 < 0 && m2 < 0) ang = -PI + atan(m2) - atan(m1);
