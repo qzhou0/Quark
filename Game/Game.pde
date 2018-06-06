@@ -21,8 +21,8 @@ void setup() {
 }
 
 void draw() {
-    createField();
-    if(start)b.move();
+   createField();
+   if(start)b.move();
 
    for(Bumper temp:bump)
        temp.bounce(b);
@@ -33,7 +33,7 @@ void draw() {
    line(left.xpos, left.ypos, left.xpos+left.size*cos(left.angle), left.ypos-left.size*sin(left.angle));
    line(right.xpos, right.ypos, right.xpos+right.size*cos(right.angle), right.ypos-right.size*sin(right.angle));
    */
-      if(leftpress)
+   if(leftpress)
      left.flipperState = 2;
    if(rightpress)
      right.flipperState=2;
@@ -41,37 +41,20 @@ void draw() {
    right.move();
    left.bounce(b);
    right.bounce(b);
+   if(b.ypos>800)
+     start = false;
 }
 
 void keyPressed(){
-   if(key == 's'){
+   if(key == 's')
      leftpress = true;
-     
-   }
-   if(key == 'k'){
+   if(key == 'k')
      rightpress = true;
-     
-   }
    if(leftpress)
      left.flipperState = 2;
    if(rightpress)
      right.flipperState=2;
-
-   /*if(rightpress && leftpress){
-     for(int i=0;i<8;i++){
-      left.move();
-      right.move();
-     }
-   }
-   else if(rightpress && !leftpress){
-     for(int i=0;i<8;i++)
-      right.move(); 
-   }
-   else{
-     for(int i=0;i<8;i++)
-      left.move(); 
-   }*/
-   if(key == ' '){
+   if(key == ' ' && start == false){
        start  = true;
        b = new Ball();
    }
@@ -98,7 +81,6 @@ void createField(){
        line(temp.xpos,temp.ypos,temp.xpoint2,temp.ypoint2);
    fill(color(0,255,0));
    strokeWeight(3);
-   
    
     for (int i = 0; i < width; i+=25) {
       line (i, 0, i, height);
@@ -146,11 +128,11 @@ void designField(){
    wall.add(new Wall(300,100,225,75));
    wall.add(new Wall(125,150,225,75));
    
-   bump.add(new Bumper(40,40,30));
-   bump.add(new Bumper(575,350,30));
+   bump.add(new Bumper(40,40,35));
+   bump.add(new Bumper(575,350,32));
    bump.add(new Bumper(400,200,25));
    bump.add(new Bumper(275,225,25));
    bump.add(new Bumper(350,300,25));
-   bump.add(new Bumper(550,65,35));
-   bump.add(new Bumper(30,375,30));
+   bump.add(new Bumper(550,65,40));
+   bump.add(new Bumper(30,375,32));
 }
