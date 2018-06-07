@@ -32,28 +32,40 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+- in most cases ball can touch the lines and be bounced by it reasonably
+- flipper may move
 
-UNRESOLVED ISSUES
+UNRESOLVED ISSUES 
+(NEED CHANGING, UPDATE 10:31 06-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+- sometimes flipper may hit ball in a strange direction
+- sometimes ball may fall through wall or bumpers
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - In Processing, positive angles are clockwise
-- Point to line segment distance
+   - you can get things to work even without knowing theory
+- Point to line segment distance formula
+- angle of reflection on an inclined plane
+- there may be different ways to do a task
+- there may be some thing occuring between draw() and keyPressed()/keyReleased()
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We removed some subclasses of Obstacle because of difficulties in writing the code.
+We added a wall subclass of Obstacle.
+
 We changed ___ to ___ bc...
 <etc>
 <etc>
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- test for how things work in a new program, don't presume!!!
+- maybe some better planning may be useful, as in class development Flipper could have been an extension of Wall
+- 
+
 <tales of wisdom gained...>
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
