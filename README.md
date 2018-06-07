@@ -21,7 +21,7 @@ PinBall is a game; subsequently, the user can spend his leisure time having fun 
 5) play and HAVE FUN?!?! (Press S for left Flipper and K for right Flipper and SPACE to launch the ball)
 
 ## Coding
-We used two ArrayLists, one of Walls and one of Bumpers, each located at specific locations to create the field. In addition there are two Flippers with a fixed point and a movable end. 
+<p>We used two ArrayLists, one of Walls and one of Bumpers, each located at specific locations to create the field. In addition there are two Flippers with a fixed point and a movable end. </p>
 The Ball has variables regarding x and y posistions, and x and y velocities. The y velocity is altered a constant amount each round to account for acceleration.
 To determine whether a ball is incontact with another object, the distance formula between two points is used if that object is a bumper, and the point-line distance formula, |Ax+By-C|/sqrt(A^2 + B^2) is used if that object is a line. The ball is reflected in most cases at an angle of reflection equal to the angle of incidence to the normal of the object.
 
