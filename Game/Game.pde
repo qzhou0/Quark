@@ -91,48 +91,65 @@ void createField(){
 }
 
 void designField(){
+  //bottom walls and side walls
    wall.add(new Wall(0,675,220,750));
    wall.add(new Wall(380,750,600,675));
    wall.add(new Wall(0,675,0,0));
    wall.add(new Wall(600,675,600,0));
    
+   //two triangles
+   //vertical lines
    wall.add(new Wall(75,650,75,525));
    wall.add(new Wall(525,650,525,525));
+  //bottom lines   
    wall.add(new Wall(75,650,200,700));
    wall.add(new Wall(525,650,400,700));
+   //upper lines
    wall.add(new Wall(75,525,200,700));
    wall.add(new Wall(525,525,400,700));
    
+   //upper left walls
    wall.add(new Wall(75,400,0,175));
    wall.add(new Wall(100,325,50,150));
    wall.add(new Wall(0,125,25,75));
    wall.add(new Wall(100,325,200,350));
    
+   //upper most-right walls
    wall.add(new Wall(525,350,575,300));
    wall.add(new Wall(575,300,600,250));
    wall.add(new Wall(600,200,575,150));
    wall.add(new Wall(575,150,525,100));
    wall.add(new Wall(525,100,450,75));
    
+   //upper less-right walls
    wall.add(new Wall(450,325,500,300));
    wall.add(new Wall(500,300,525,250));
    wall.add(new Wall(525,200,500,150));
    wall.add(new Wall(500,150,450,125));
    wall.add(new Wall(525,250,525,200));
    
+   //walls at top
    wall.add(new Wall(75,25,275,0));
    wall.add(new Wall(275,0,600,25));
    
+   //middle left walls
    wall.add(new Wall(150,200,300,100));
    wall.add(new Wall(150,200,125,150));
-   wall.add(new Wall(300,100,225,75));
+  wall.add(new Wall(300,100,225,75));
    wall.add(new Wall(125,150,225,75));
    
+   //upper left
    bump.add(new Bumper(40,40,35));
+   //middle right
    bump.add(new Bumper(575,350,32));
+   //middle up-right
    bump.add(new Bumper(400,200,25));
+   //middle upleft
    bump.add(new Bumper(275,225,25));
+   //middle downward
    bump.add(new Bumper(350,300,25));
+   //up right
    bump.add(new Bumper(550,65,40));
+   //middle left
    bump.add(new Bumper(30,375,32));
 }

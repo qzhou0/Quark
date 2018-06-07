@@ -92,18 +92,9 @@ class Flipper {
   void bounce(Ball o){  
     if(inContact(o)){
         //reflect algo from wall
-        System.out.println("Collide "+col+" " + o.xpos+","+o.ypos);
+        //System.out.println("Collide "+col+" " + o.xpos+","+o.ypos);
         col++;
 
-        float ang = angle+PI/2-(atan(o.yvel/o.xvel)-(angle+PI/2));
-
-        float g =4.905/60;//acceleration due to gravity
-        float betha = PI + angle;
-        float norm=g*cos(betha);
-        strokeWeight(3);
-
-    
-        strokeWeight(1);
         float normal;
         int distance = (int)Math.pow(Math.pow((o.ypos-ypos),2)+Math.pow((o.ypos-xpos),2),.5)/10;
        
@@ -118,7 +109,7 @@ class Flipper {
           line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2+100*cos(normal),(ypos2+ypos)/2);
           stroke(255,0,0);
           line((xpos+xpos2)/2,(ypos+ypos2)/2, (xpos2+xpos)/2,(ypos2+ypos)/2-100*sin(normal));
-          System.out.print((normal*180)%(360));
+          //System.out.print((normal*180/PI)%(360));
         }
         
         float vel = (float)Math.pow(Math.pow(o.xvel,2)+Math.pow(o.yvel,2),.5);
