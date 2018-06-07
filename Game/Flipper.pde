@@ -112,7 +112,7 @@ class Flipper {
           //System.out.print((normal*180/PI)%(360));
         }
         
-        float vel = (float)Math.pow(Math.pow(o.xvel,2)+Math.pow(o.yvel,2),.5);
+        //float vel = (float)Math.pow(Math.pow(o.xvel,2)+Math.pow(o.yvel,2),.5);
         float x = o.xvel-tan(angle)/abs(tan(angle))*F*sin(normal)*distance;
         o.xvel =tan(angle)/abs(tan(angle))*o.yvel+tan(angle)/abs(tan(angle))*F*cos(normal)*distance;
         o.yvel = -abs(x);

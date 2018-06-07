@@ -13,24 +13,21 @@ class Wall extends Obstacle{
     
    void reflect(Ball other){
        if(this.inContact(other)){
-         float m1 = other.yvel/other.xvel;
-         float m2 = (ypos-ypoint2)/(xpos-xpoint2);
-         System.out.println("Collide" + coll);
-         coll++;
-         float ang;
-         if (xpos == xpoint2) {
-           other.xvel = -other.xvel;
-           return;
-         }
-         else if (m1 > 0 && m2 < 0) ang = -atan(m1) + atan(m2);
-         else if (m1 < 0 && m2 < 0) ang = -PI + atan(m2) - atan(m1);
-         else if (m1 < 0 && m2 > 0) ang = -PI -atan(m1) + atan(m2);
-         else ang = atan(m2) - atan(m1);
-         //else ang = atan(m1) + atan(m2);
-         float vel = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 );
-         System.out.println((ang/PI * 180) + " " + vel);
-         other.xvel = vel * cos(ang);
-         other.yvel = vel * sin(ang);
+         //Reflection1 Example on Processing.org
+         float speed = pow( pow(other.xvel,2) + pow(other.yvel,2) , .5 );
+         PVector velocity = new PVector(other.xvel,other.yvel);
+         PVector incidence = PVector.mult(velocity,-1);
+         incidence.normalize();
+         
+         PVector normal = new PVector(-(ypos - ypoint2),xpos-xpoint2);
+         normal.normalize();
+         
+         float dot = incidence.dot(normal);
+         velocity.set(2*normal.x*dot - incidence.x, 2*normal.y*dot - incidence.y,0);
+         velocity.mult(speed);
+         
+         other.xvel = velocity.x;
+         other.yvel = velocity.y;
        }
    }
    

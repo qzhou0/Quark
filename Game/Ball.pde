@@ -7,17 +7,17 @@ class Ball {
   
   Ball(){
    xpos = 500;
-   ypos = 400;
+   ypos = 50;
    xvel = 0;
    yvel = 0;
    radius = 7.5;
   }
   
   void move() {
-    if (xvel > 14) xvel = 14; //Speed limits
-    else if (xvel < -14) xvel = 14;
-    if (yvel > 14) yvel = 14;
-    else if (yvel < -14) yvel = -14;
+    if (xvel > 10) xvel = 10; //Speed limits
+    else if (xvel < -10) xvel = 10;
+    if (yvel > 10) yvel = 10;
+    else if (yvel < -10) yvel = -10;
     
     ellipse(xpos,ypos,radius*2,radius*2);
     fill(color(255,0,0));
