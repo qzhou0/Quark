@@ -26,6 +26,6 @@ PinBall is a game; subsequently, the user can spend his leisure time having fun 
 <p>To determine whether a ball is incontact with another object, the distance formula between two points is used if that object is a bumper, and the point-line distance formula, |Ax+By-C|/sqrt(A^2 + B^2) is used if that object is a line. The ball is reflected in most cases at an angle of reflection equal to the angle of incidence to the normal of the object.</p>
 
 ## Sources
-We couldn't figure out the reflection method, so used [this processing code](https://processing.org/examples/reflection1.html)
+We couldn't figure out the reflection method, so used [this processing code](https://processing.org/examples/reflection1.html) by Ira Greenberg
 
 
