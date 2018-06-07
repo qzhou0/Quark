@@ -55,7 +55,7 @@ MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We removed some subclasses of Obstacle because of difficulties in writing the code.
 We added a wall subclass of Obstacle.
-
+We increased the number of variables in some classes in response to some confusions for debugging or alternative approaches, e.g. Flipper's xypos2
 We changed ___ to ___ bc...
 <etc>
 <etc>
