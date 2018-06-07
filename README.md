@@ -4,7 +4,7 @@
 ## APCS2 pd01
 ## Final Project: Pinball
 
-[Quark/docs/proposal.pdf][Our Proposal]
+[Our Proposal](Quark/docs/proposal.pdf)
 
 ## Description
 The classic pinball game in which the user controls the flippers located on the bottom of the gui. Use those flippers to keep the moving ball within the field. There's a downward acceleration acting on the ball. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
