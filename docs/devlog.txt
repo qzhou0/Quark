@@ -34,19 +34,19 @@ OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * in most cases ball can touch the lines and be bounced by it reasonably
 * flipper may move
+* Wall/Bumper clipping
 
 UNRESOLVED ISSUES 
-(NEED CHANGING, UPDATE 10:31 06-07)
+(NEED CHANGING, UPDATE 5:22 06-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [ ] sometimes flipper may hit ball in a strange direction
-- [ ] sometimes ball may fall through wall or bumpers
 
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * In Processing, positive angles are clockwise
    * you can get things to work even without knowing theory
-* Point to line segment distance formula
+* Point to line segment distance
 * angle of reflection on an inclined plane
 * there may be different ways to do a task
 * there may be some thing occuring between draw() and keyPressed()/keyReleased()
@@ -85,7 +85,7 @@ LESSONS LEARNED
 2018-06-07
 --------------------------------------------------------------
 Victor Lin :: 
-Kevin  Lin :: 
+Kevin  Lin :: Wall/Bumper collision fixed
 Qian  Zhou :: 
 ==============================================================
 
