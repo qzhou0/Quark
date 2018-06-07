@@ -7,8 +7,8 @@
 [Our Proposal](Quark/docs/proposal.pdf)
 
 ## Description
-The classic pinball game in which the user controls the flippers located on the bottom of the gui. These flippers can flip within a range of 60 degrees, 30 above and 30 below the horizontal. This flip will bounce the ball upward, with a more powerful bounce when moving upwards.
-Use those flippers to keep the moving ball within the field. There's a downward acceleration acting on the ball. The ball will (ideally) be bounced back by the walls, and may be accelerated by the red bumpers. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
+<p>The classic pinball game in which the user controls the flippers located on the bottom of the gui. These flippers can flip within a range of 60 degrees, 30 above and 30 below the horizontal. This flip will bounce the ball upward, with a more powerful bounce when moving upwards.</p>
+<p>Use those flippers to keep the moving ball within the field. There's a downward acceleration acting on the ball. The ball will (ideally) be bounced back by the walls, and may be accelerated by the red bumpers. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.</p>
 
 ## Advantages of Use
 PinBall is a game; subsequently, the user can spend his leisure time having fun using his eyes and hands.
