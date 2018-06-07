@@ -70,6 +70,13 @@ LESSONS LEARNED
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+2018-06-06
+--------------------------------------------------------------
+Victor Lin :: expand bumper size, implement stopping and limitations on start, delete useless stuff in flipper
+Kevin  Lin :: wall collision debugging
+Qian  Zhou :: comments in Game about position, delete useless stuff in flipper
+==============================================================
+
 2018-06-05
 --------------------------------------------------------------
 Victor Lin :: completed field design
