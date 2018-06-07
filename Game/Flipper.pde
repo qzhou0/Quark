@@ -39,7 +39,7 @@ class Flipper {
           F=0;
         }
         else{
-          F-=5;  
+          F-=2;  
           angle+=PI/24;
         }
       }
@@ -49,7 +49,7 @@ class Flipper {
           F=0;
         }
         else{
-          F-=5;
+          F-=2;
           angle-=PI/24;
         }
       }

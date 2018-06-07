@@ -78,10 +78,14 @@ void keyReleased(){//change flippers back after key press is done
      leftpress = false;
    if(key == 'k')
      rightpress = false;
-   if(leftpress)
+   if(leftpress){
      left.flipperState = 2;
-   if(rightpress)
+     left.F=32;  
+   }
+   if(rightpress){
      right.flipperState=2;
+     right.F=32;
+   }
 }
 
 
