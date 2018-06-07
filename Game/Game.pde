@@ -3,11 +3,12 @@ ArrayList<Bumper> bump  = new ArrayList<Bumper>();
 ArrayList<Wall> wall = new ArrayList<Wall>();
 Ball b;
 int points;
-int numBalls = 5;
+int numBalls = 6;
 Flipper left,right;
 boolean start = false;
 boolean leftpress = false;
 boolean rightpress = false;
+PShape rectangle;
 
 void setup() {
   frameRate(60);
@@ -22,17 +23,12 @@ void setup() {
 
 void draw() {
    createField();
+   scoreBoard();
    if(start)b.move();
-
    for(Bumper temp:bump)
        temp.bounce(b);
    for(Wall temp:wall)
        temp.reflect(b);
-   /*strokeWeight(5);
-   stroke(0, 0,0);
-   line(left.xpos, left.ypos, left.xpos+left.size*cos(left.angle), left.ypos-left.size*sin(left.angle));
-   line(right.xpos, right.ypos, right.xpos+right.size*cos(right.angle), right.ypos-right.size*sin(right.angle));
-   */
    if(leftpress)
      left.flipperState = 2;
    if(rightpress)
@@ -43,24 +39,41 @@ void draw() {
    right.bounce(b);
    if(b.ypos>800)
      start = false;
+   if(numBalls-1==0 && start==false){//exit if no balls are left
+     background(255,255,255);
+     textSize(75);
+     text("GAME OVER",90,400);
+     noLoop();
+   }
 }
 
+void scoreBoard(){//creates and displays score board
+     rectangle = createShape(RECT,175,400,250,150);
+     rectangle.setFill(color(0,0,0));
+     shape(rectangle);
+     textSize(32);
+     text("Balls Left: " + (numBalls-1),200,450);
+     text("Points: " + points,200,500);
+}
+
+
 void keyPressed(){
-   if(key == 's')
+   if(key == 's') //read for left flipper command
      leftpress = true;
-   if(key == 'k')
+   if(key == 'k') //read for right flipper command
      rightpress = true;
-   if(leftpress)
+   if(leftpress)// change state : separate from previous if statements in order for simultaneous flipper movement
      left.flipperState = 2;
    if(rightpress)
      right.flipperState=2;
-   if(key == ' ' && start == false){
+   if(key == ' ' && start == false && numBalls>0){//place ball on field
        start  = true;
+       numBalls--;
        b = new Ball();
    }
 }
 
-void keyReleased(){
+void keyReleased(){//change flippers back after key press is done
    if(key == 's')
      leftpress = false;
    if(key == 'k')
@@ -72,7 +85,7 @@ void keyReleased(){
 }
 
 
-void createField(){
+void createField(){//sets up the field with obstacles
    background(255,255,255);
    strokeWeight(5);
    for(Bumper temp:bump)
@@ -82,15 +95,15 @@ void createField(){
    fill(color(0,255,0));
    strokeWeight(3);
    
-    for (int i = 0; i < width; i+=25) {
+   /* for (int i = 0; i < width; i+=25) {// used for obstacle placement/creates grid
       line (i, 0, i, height);
     }
     for (int i = 0; i < height; i+=25) {
       line (0, i, width, i);
-    }
+    }*/
 }
 
-void designField(){
+void designField(){//placement of obstacles
   //bottom walls and side walls
    wall.add(new Wall(0,675,220,750));
    wall.add(new Wall(380,750,600,675));

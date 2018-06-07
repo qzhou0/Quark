@@ -32,6 +32,8 @@ class Bumper extends Obstacle{
          
        other.xpos += other.xvel;
        other.yvel += other.yvel;
+       
+       points += size*1.5;
      }
    }
   
