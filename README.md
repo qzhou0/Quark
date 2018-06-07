@@ -1,10 +1,13 @@
-# PinBall
+# Quark
 
-## Quark: Kevin Lin, Qian Zhou, Victor Lin
-## Period 1
+## Kevin Lin, Qian Zhou, Victor Lin
+## APCS2 pd01
+## Final Project: Pinball
+
+Our Proposal[Quark/docs/proposal.pdf]
 
 ## Description
-the classic pinball game in which the user controls the flippers located on the bottom of the gui. Use those flippers to keep the moving ball within the field. There's a downward acceleration acting on the ball. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
+The classic pinball game in which the user controls the flippers located on the bottom of the gui. Use those flippers to keep the moving ball within the field. There's a downward acceleration acting on the ball. The user gains points when he/she hits a bumper, and loses a "life"(5) when the ball falls into the hole between the flippers.
 
 ## Advantages of Use
 PinBall is a game; subsequently, the user can spend his leisure time having fun using his eyes and hands.
