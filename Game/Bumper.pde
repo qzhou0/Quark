@@ -20,11 +20,11 @@ class Bumper extends Obstacle{
        PVector incidence = PVector.mult(velocity,-1);
        incidence.normalize();
          
-       PVector normal = new PVector(-(ypos - other.ypos),xpos-other.xpos);
+       PVector normal = new PVector((xpos - other.xpos),ypos-other.ypos);
        normal.normalize();
          
        float dot = incidence.dot(normal);
-       velocity.set(2*normal.x*dot - incidence.x, 2*normal.y*dot - incidence.y,0);
+       velocity.set(2*normal.x*dot - incidence.x, 2*normal.y*dot - incidence.y,0); //Normalized reflection vector
        velocity.mult(speed + 2);
          
        other.xvel = velocity.x;

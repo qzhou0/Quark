@@ -23,7 +23,7 @@ class Wall extends Obstacle{
          normal.normalize();
          
          float dot = incidence.dot(normal);
-         velocity.set(2*normal.x*dot - incidence.x, 2*normal.y*dot - incidence.y,0);
+         velocity.set(2*normal.x*dot - incidence.x, 2*normal.y*dot - incidence.y,0); //Normalized reflection vector
          velocity.mult(speed);
          
          other.xvel = velocity.x;
