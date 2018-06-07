@@ -85,8 +85,8 @@ LESSONS LEARNED
 2018-06-07
 --------------------------------------------------------------
 Victor Lin :: created scoreboard and exit upon game over
-Kevin  Lin :: Wall/Bumper collision fixed
-Qian  Zhou :: 
+Kevin  Lin :: Wall/Bumper collision fixed, research collision method
+Qian  Zhou :: Flipper collision fixed
 ==============================================================
 
 2018-06-06
