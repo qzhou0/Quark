@@ -84,7 +84,7 @@ LESSONS LEARNED
 
 2018-06-07
 --------------------------------------------------------------
-Victor Lin :: 
+Victor Lin :: created scoreboard and exit upon game over
 Kevin  Lin :: Wall/Bumper collision fixed
 Qian  Zhou :: 
 ==============================================================
