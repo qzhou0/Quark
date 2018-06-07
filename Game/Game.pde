@@ -62,10 +62,16 @@ void keyPressed(){
      leftpress = true;
    if(key == 'k') //read for right flipper command
      rightpress = true;
-   if(leftpress)// change state : separate from previous if statements in order for simultaneous flipper movement
+   if(leftpress){// change state : separate from previous if statements in order for simultaneous flipper movement
      left.flipperState = 2;
-   if(rightpress)
+        if(left.flipperState ==1){
+     left.F=32;  }
+   }
+   if(rightpress){
      right.flipperState=2;
+     if(right.flipperState ==1){
+     right.F=32;}
+   }
    if(key == ' ' && start == false && numBalls>0){//place ball on field
        start  = true;
        numBalls--;
@@ -80,13 +86,11 @@ void keyReleased(){//change flippers back after key press is done
      rightpress = false;
    if(leftpress){
      left.flipperState = 2;
-     if(left.flipperState ==1){
-     left.F=32;  }
+  
    }
    if(rightpress){
      right.flipperState=2;
-     if(right.flipperState ==1){
-     right.F=32;}
+ 
    }
 }
 
