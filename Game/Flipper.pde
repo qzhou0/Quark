@@ -40,7 +40,7 @@ class Flipper {
         }
         else{
           F-=5;  
-          angle+=PI/18;
+          angle+=PI/24;
         }
       }
       else{
@@ -50,7 +50,7 @@ class Flipper {
         }
         else{
           F-=5;
-          angle-=PI/18;
+          angle-=PI/24;
         }
       }
     }
@@ -60,14 +60,14 @@ class Flipper {
           flipperState=1;
           F=0;
         }
-        else{angle-=PI/18;}
+        else{angle-=PI/24;}
       }
       else{
         if(angle >=7*PI/6){
           flipperState=1;
           F=0;
         }
-        else{angle+=PI/18;}
+        else{angle+=PI/24;}
       }
     }
   }
@@ -86,7 +86,7 @@ class Flipper {
 
     line(xpos,ypos, xpos2,xpos2*m+b);
     strokeWeight(1);
-    return abs(m*o.xpos+b-o.ypos)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;
+    return abs(m*(o.xpos+o.xvel)+b-o.ypos-o.yvel)/Math.pow(Math.pow(m,2)+1,.5)<o.radius;
   }
   
   void bounce(Ball o){  
@@ -95,6 +95,29 @@ class Flipper {
         //System.out.println("Collide "+col+" " + o.xpos+","+o.ypos);
         col++;
 
+         float speed = pow( pow(o.xvel,2) + pow(o.yvel,2) , .5 );
+         PVector velocity = new PVector(o.xvel,o.yvel);
+         PVector incidence = PVector.mult(velocity,-1);
+         incidence.normalize();
+         PVector normal = new PVector(-(ypos - ypos2),xpos-xpos2);
+
+         normal.normalize();
+         
+         float dot = incidence.dot(normal);
+         velocity.set(2*normal.x*dot - incidence.x, 2*normal.y*dot - incidence.y,0);
+         velocity.mult(speed);
+         int distance = (int)Math.pow(Math.pow((o.ypos-ypos),2)+Math.pow((o.ypos-xpos),2),.5)/10;
+       float norm;
+        if (orientation)
+          norm = (angle+PI/2)%(2*PI);//(angle+PI/2)%(2*PI);
+        else norm = (angle-PI/2)%(2*PI);
+       
+        o.xvel =velocity.x +tan(angle)/abs(tan(angle))*F*cos(norm)*distance;
+        o.yvel =velocity.y-tan(angle)/abs(tan(angle))*F*sin(norm)*distance;
+         o.xvel = o.xvel;
+         o.yvel = -abs(o.yvel);
+         
+       /*
         float normal;
         int distance = (int)Math.pow(Math.pow((o.ypos-ypos),2)+Math.pow((o.ypos-xpos),2),.5)/10;
        
@@ -115,7 +138,7 @@ class Flipper {
         //float vel = (float)Math.pow(Math.pow(o.xvel,2)+Math.pow(o.yvel,2),.5);
         float x = o.xvel-tan(angle)/abs(tan(angle))*F*sin(normal)*distance;
         o.xvel =tan(angle)/abs(tan(angle))*o.yvel+tan(angle)/abs(tan(angle))*F*cos(normal)*distance;
-        o.yvel = -abs(x);
+        o.yvel = -abs(x);*/
     }
   }
   //accessors
