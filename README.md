@@ -4,7 +4,7 @@
 ## APCS2 pd01
 ## Final Project: Pinball
 
-[Our Proposal](Quark/docs/proposal.pdf)
+[Our Proposal](docs/proposal.pdf)
 
 ## Description
 <p>The classic pinball game in which the user controls the flippers located on the bottom of the gui. These flippers can flip within a range of 60 degrees, 30 above and 30 below the horizontal. This flip will bounce the ball upward, with a more powerful bounce when moving upwards.</p>
