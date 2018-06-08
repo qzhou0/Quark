@@ -37,9 +37,9 @@ OBSTACLES OVERCOME
 * Wall/Bumper clipping
 
 UNRESOLVED ISSUES 
-(NEED CHANGING, UPDATE 5:22 06-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- [ ] sometimes flipper may hit ball in a strange direction
+- sometimes ball may fall through lines at certain angles
+- right flipper upper positioni seem a little higher than left flipper upper position
 
 
 COOL STUFF LEARNED
