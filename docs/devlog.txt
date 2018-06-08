@@ -39,7 +39,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - sometimes ball may fall through lines at certain angles
-- right flipper upper positioni seem a little higher than left flipper upper position
+- right flipper upper position seem a little higher than left flipper upper position
 
 
 COOL STUFF LEARNED
@@ -56,14 +56,12 @@ MID-DEVELOPMENT DESIGN CHANGES
 * We removed some subclasses of Obstacle because of difficulties in writing the code.
 * We added a wall subclass of Obstacle.
 * We increased the number of variables in some classes in response to some confusions for debugging or alternative approaches, e.g. Flipper's xypos2
-We changed ___ to ___ bc...
-<etc>
-<etc>
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* test for how things work in a new program, don't presume!!!
+* test or look for how things work in a new program, don't presume(as angle)!!!
 * maybe some better planning may be useful, as in class development Flipper could have been an extension of Wall
+* We should work out theory first and have a consensus on how thinsg would work, espcially when math/physics is required
 - 
 
 <tales of wisdom gained...>
@@ -85,8 +83,8 @@ LESSONS LEARNED
 2018-06-07
 --------------------------------------------------------------
 Victor Lin :: created scoreboard and exit upon game over
-Kevin  Lin :: Wall/Bumper collision fixed, research collision method
-Qian  Zhou :: Flipper collision fixed
+Kevin  Lin :: Wall/Bumper collision fixed, research and think about collision method, uml
+Qian  Zhou :: Flipper collision fixed using Wall method, readme, flowchart, play game
 ==============================================================
 
 2018-06-06
