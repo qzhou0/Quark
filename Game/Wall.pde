@@ -1,10 +1,8 @@
 class Wall extends Obstacle{
-  float coll;
     float xpoint2;
     float ypoint2;
   
     Wall(float xloc1, float yloc1, float xloc2, float yloc2){
-      coll = 0;
       xpos = xloc1;
       ypos = yloc1;
       xpoint2 = xloc2;
