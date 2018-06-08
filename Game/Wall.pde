@@ -27,7 +27,9 @@ class Wall extends Obstacle{
          velocity.mult(speed);
          
          other.xvel = velocity.x;
-         other.yvel = velocity.y;
+         other.yvel = velocity.y * .9;
+         
+         other.yvel += velocity.y * .1;
        }
    }
    
